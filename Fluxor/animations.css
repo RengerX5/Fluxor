@@ -1,0 +1,121 @@
+/* =============================================
+   ANIMATIONS & SCROLL REVEALS
+   ============================================= */
+
+/* Base fade-in up animation for hero */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll reveal: initial hidden state */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger siblings */
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+.reveal:nth-child(4) { transition-delay: 0.3s; }
+.reveal:nth-child(5) { transition-delay: 0.4s; }
+
+/* Stat counter animation */
+.stat-item__value.counting {
+  animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+/* Pricing amount change */
+.pricing-card__amount.changing {
+  animation: priceFlip 0.25s ease;
+}
+
+@keyframes priceFlip {
+  0% { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0; transform: translateY(-8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Navbar scroll effect */
+@keyframes navbarSlideDown {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+/* Hover glow pulse on CTA buttons */
+.btn--primary,
+.btn--pricing-primary {
+  position: relative;
+}
+
+.btn--primary::after,
+.btn--pricing-primary::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(var(--radius-sm) + 2px);
+  background: transparent;
+  transition: box-shadow var(--transition-base);
+}
+
+.btn--pricing-primary:hover::after {
+  box-shadow: 0 0 20px 4px rgba(115, 3, 192, 0.4);
+}
+
+/* How diagram item pulsing connection lines */
+.how__diagram-logo {
+  animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+  0%   { box-shadow: 0 0 20px rgba(115,3,192,0.3); }
+  100% { box-shadow: 0 0 50px rgba(115,3,192,0.7); }
+}
+
+/* Stats globe slow rotation/pulse */
+.stats__globe {
+  animation: globePulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes globePulse {
+  0%   { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  100% { opacity: 1;   transform: translateX(-50%) scale(1.03); }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__bg-glow--1,
+  .hero__bg-glow--2,
+  .stats__globe,
+  .how__diagram-logo {
+    animation: none;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

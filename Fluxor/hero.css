@@ -1,0 +1,244 @@
+/* =============================================
+   SECTION: Hero / Header
+   ============================================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: var(--color-bg);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 80px;
+}
+
+/* ---- Background Decorative Elements (CSS-only) ---- */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Main ambient glow - upper left violet */
+.hero__bg-glow--1 {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 70%;
+  height: 80%;
+  background: radial-gradient(ellipse at 40% 40%,
+    rgba(115, 3, 192, 0.45) 0%,
+    rgba(115, 3, 192, 0.1) 45%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: heroGlow1 8s ease-in-out infinite alternate;
+}
+
+/* Pink/magenta glow - center-right */
+.hero__bg-glow--2 {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 55%;
+  height: 70%;
+  background: radial-gradient(ellipse at 60% 50%,
+    rgba(220, 0, 150, 0.35) 0%,
+    rgba(180, 0, 180, 0.15) 40%,
+    transparent 68%
+  );
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: heroGlow2 10s ease-in-out infinite alternate;
+}
+
+/* Bottom center soft violet base */
+.hero__bg-glow--3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    200deg,
+    rgba(115, 3, 192, 0.04) 26%,
+    rgba(115, 3, 192, 0.18) 87%
+  );
+}
+
+/* Curved light line 1 - the "ribbon" effect from Figma */
+.hero__bg-line--1 {
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  background: conic-gradient(
+    from 150deg at 60% 30%,
+    transparent 0deg,
+    rgba(200, 50, 220, 0.08) 15deg,
+    rgba(230, 80, 255, 0.18) 22deg,
+    rgba(200, 50, 220, 0.08) 30deg,
+    transparent 45deg,
+    transparent 360deg
+  );
+  filter: blur(4px);
+}
+
+/* Curved light line 2 - offset ribbon */
+.hero__bg-line--2 {
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  background: conic-gradient(
+    from 148deg at 62% 32%,
+    transparent 0deg,
+    rgba(180, 30, 200, 0.04) 12deg,
+    rgba(210, 60, 240, 0.10) 18deg,
+    rgba(180, 30, 200, 0.04) 24deg,
+    transparent 36deg,
+    transparent 360deg
+  );
+  filter: blur(2px);
+}
+
+@keyframes heroGlow1 {
+  0%   { transform: scale(1) translate(0, 0); opacity: 1; }
+  100% { transform: scale(1.08) translate(2%, -3%); opacity: 0.85; }
+}
+
+@keyframes heroGlow2 {
+  0%   { transform: scale(1) translate(0, 0); opacity: 0.9; }
+  100% { transform: scale(1.06) translate(-3%, 4%); opacity: 1; }
+}
+
+/* ---- Content ---- */
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding-top: 200px;
+}
+
+/* Social proof pill */
+.hero__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 16px 6px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(30, 0, 50, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  width: fit-content;
+  animation: fadeSlideUp 0.6s ease 0.1s both;
+}
+
+.hero__pill-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.hero__avatar {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,0,0,0.5);
+  margin-left: -6.7px;
+  background: linear-gradient(135deg, #9b59b6, #3498db);
+}
+
+.hero__avatar:first-child {
+  margin-left: 0;
+}
+
+.hero__avatar--1 { background: linear-gradient(135deg, #ff6b9d, #c44dff); }
+.hero__avatar--2 { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+.hero__avatar--3 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+.hero__avatar--4 { background: linear-gradient(135deg, #fa709a, #fee140); }
+
+.hero__pill-text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  white-space: nowrap;
+}
+
+/* Headline */
+.hero__headline {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 620px;
+  animation: fadeSlideUp 0.6s ease 0.2s both;
+}
+
+/* Subheadline */
+.hero__subheadline {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  max-width: 320px;
+  animation: fadeSlideUp 0.6s ease 0.3s both;
+}
+
+/* CTAs */
+.hero__ctas {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  margin-top: var(--space-24);
+  animation: fadeSlideUp 0.6s ease 0.4s both;
+}
+
+/* =============================================
+   Responsive
+   ============================================= */
+@media (max-width: 1024px) {
+  .hero__content {
+    padding: 160px var(--space-32) 0;
+  }
+
+  .hero__headline {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+    padding-bottom: var(--space-64);
+    align-items: center;
+  }
+
+  .hero__content {
+    padding: 120px var(--space-24) 0;
+    gap: var(--space-12);
+  }
+
+  .hero__headline {
+    font-size: 40px;
+  }
+
+  .hero__subheadline {
+    font-size: var(--font-size-base);
+  }
+
+  .hero__ctas {
+    flex-wrap: wrap;
+    gap: var(--space-12);
+  }
+}
