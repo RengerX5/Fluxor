@@ -12,7 +12,7 @@
   padding-bottom: 80px;
 }
 
-/* ---- Background Decorative Elements (CSS-only) ---- */
+/* ---- Background: real image from Figma ---- */
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -20,100 +20,12 @@
   z-index: 0;
 }
 
-/* Main ambient glow - upper left violet */
-.hero__bg-glow--1 {
-  position: absolute;
-  top: -20%;
-  left: -10%;
-  width: 70%;
-  height: 80%;
-  background: radial-gradient(ellipse at 40% 40%,
-    rgba(115, 3, 192, 0.45) 0%,
-    rgba(115, 3, 192, 0.1) 45%,
-    transparent 70%
-  );
-  border-radius: 50%;
-  filter: blur(60px);
-  animation: heroGlow1 8s ease-in-out infinite alternate;
-}
-
-/* Pink/magenta glow - center-right */
-.hero__bg-glow--2 {
-  position: absolute;
-  top: 10%;
-  right: -5%;
-  width: 55%;
-  height: 70%;
-  background: radial-gradient(ellipse at 60% 50%,
-    rgba(220, 0, 150, 0.35) 0%,
-    rgba(180, 0, 180, 0.15) 40%,
-    transparent 68%
-  );
-  border-radius: 50%;
-  filter: blur(80px);
-  animation: heroGlow2 10s ease-in-out infinite alternate;
-}
-
-/* Bottom center soft violet base */
-.hero__bg-glow--3 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(
-    200deg,
-    rgba(115, 3, 192, 0.04) 26%,
-    rgba(115, 3, 192, 0.18) 87%
-  );
-}
-
-/* Curved light line 1 - the "ribbon" effect from Figma */
-.hero__bg-line--1 {
-  position: absolute;
-  top: 0;
-  left: -10%;
-  width: 120%;
+.hero__bg-img {
+  width: 100%;
   height: 100%;
-  background: conic-gradient(
-    from 150deg at 60% 30%,
-    transparent 0deg,
-    rgba(200, 50, 220, 0.08) 15deg,
-    rgba(230, 80, 255, 0.18) 22deg,
-    rgba(200, 50, 220, 0.08) 30deg,
-    transparent 45deg,
-    transparent 360deg
-  );
-  filter: blur(4px);
-}
-
-/* Curved light line 2 - offset ribbon */
-.hero__bg-line--2 {
-  position: absolute;
-  top: 0;
-  left: -10%;
-  width: 120%;
-  height: 100%;
-  background: conic-gradient(
-    from 148deg at 62% 32%,
-    transparent 0deg,
-    rgba(180, 30, 200, 0.04) 12deg,
-    rgba(210, 60, 240, 0.10) 18deg,
-    rgba(180, 30, 200, 0.04) 24deg,
-    transparent 36deg,
-    transparent 360deg
-  );
-  filter: blur(2px);
-}
-
-@keyframes heroGlow1 {
-  0%   { transform: scale(1) translate(0, 0); opacity: 1; }
-  100% { transform: scale(1.08) translate(2%, -3%); opacity: 0.85; }
-}
-
-@keyframes heroGlow2 {
-  0%   { transform: scale(1) translate(0, 0); opacity: 0.9; }
-  100% { transform: scale(1.06) translate(-3%, 4%); opacity: 1; }
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 /* ---- Content ---- */
