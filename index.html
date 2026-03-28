@@ -7,11 +7,11 @@
   <title>Fluxor — AI Data Ecosystems</title>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="./variables.css" />
-  <link rel="stylesheet" href="./navbar.css" />
-  <link rel="stylesheet" href="./hero.css" />
-  <link rel="stylesheet" href="./sections.css" />
-  <link rel="stylesheet" href="./animations.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/animations.css" />
 </head>
 <body>
 
@@ -21,11 +21,7 @@
   <header class="navbar" id="navbar">
     <nav class="navbar__inner">
       <a href="#" class="navbar__logo">
-        <svg class="navbar__logo-icon" width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.5 0L23 6.5V17.5L11.5 24L0 17.5V6.5L11.5 0Z" fill="white" opacity="0.9"/>
-          <path d="M11.5 4L19 8.5V15.5L11.5 20L4 15.5V8.5L11.5 4Z" fill="black"/>
-          <path d="M11.5 7L16 9.8V14.2L11.5 17L7 14.2V9.8L11.5 7Z" fill="white" opacity="0.6"/>
-        </svg>
+        <img src="assets/Logo.svg" alt="Fluxor" class="navbar__logo-icon" width="23" height="24" />
         <span class="navbar__logo-text">Fluxor</span>
       </a>
 
@@ -55,11 +51,7 @@
        ============================================= -->
   <section class="hero" id="hero">
     <div class="hero__bg" aria-hidden="true">
-      <div class="hero__bg-glow hero__bg-glow--1"></div>
-      <div class="hero__bg-glow hero__bg-glow--2"></div>
-      <div class="hero__bg-glow hero__bg-glow--3"></div>
-      <div class="hero__bg-line hero__bg-line--1"></div>
-      <div class="hero__bg-line hero__bg-line--2"></div>
+      <img class="hero__bg-img" src="assets/background-image.jpg" alt="" />
     </div>
     <div class="hero__content">
       <div class="hero__pill">
@@ -164,7 +156,7 @@
         </div>
         <div class="how__diagram-center">
           <div class="how__diagram-logo">
-            <svg width="44" height="46" viewBox="0 0 44 46" fill="none"><path d="M22 0L44 11.5V34.5L22 46L0 34.5V11.5L22 0Z" fill="white" opacity="0.9"/><path d="M22 8L36 15.5V30.5L22 38L8 30.5V15.5L22 8Z" fill="black"/><path d="M22 14L30 18.5V27.5L22 32L14 27.5V18.5L22 14Z" fill="white" opacity="0.6"/></svg>
+            <img src="assets/Logo Square.svg" alt="Fluxor" width="85" height="85" />
           </div>
         </div>
         <div class="how__diagram-card how__diagram-card--right">
@@ -191,27 +183,27 @@
         <div class="feature-card reveal">
           <h3 class="feature-card__title">Ultra-Low Latency</h3>
           <p class="feature-card__desc">Minimize delays to deliver near-instantaneous data insights and actions.</p>
-          <div class="feature-card__art" aria-hidden="true"><span class="art-ring art-ring--1"></span><span class="art-ring art-ring--2"></span><span class="art-ring art-ring--3"></span></div>
+          <div class="feature-card__art" aria-hidden="true"><img src="assets/Ring Abstract Shape.png" alt="" class="feature-card__art-img" /></div>
         </div>
         <div class="feature-card reveal">
           <h3 class="feature-card__title">Fault Tolerance &amp; Reliability</h3>
           <p class="feature-card__desc">Ensure uninterrupted data flow with built-in redundancy and error recovery.</p>
-          <div class="feature-card__art" aria-hidden="true"><span class="art-cube"></span></div>
+          <div class="feature-card__art" aria-hidden="true"><img src="assets/Cube Hollow Shape.png" alt="" class="feature-card__art-img" /></div>
         </div>
         <div class="feature-card reveal">
           <h3 class="feature-card__title">Horizontal Scalability</h3>
           <p class="feature-card__desc">Expand processing capacity seamlessly with distributed architecture.</p>
-          <div class="feature-card__art" aria-hidden="true"><span class="art-hex"></span></div>
+          <div class="feature-card__art" aria-hidden="true"><img src="assets/HoneyComb Shape.png" alt="" class="feature-card__art-img" /></div>
         </div>
         <div class="feature-card reveal">
           <h3 class="feature-card__title">Smart Data Enrichment</h3>
           <p class="feature-card__desc">Apply real-time analytics, enrichment, and transformation to raw data streams.</p>
-          <div class="feature-card__art" aria-hidden="true"><span class="art-cube2"></span></div>
+          <div class="feature-card__art" aria-hidden="true"><img src="assets/Cube Shape.png" alt="" class="feature-card__art-img" /></div>
         </div>
         <div class="feature-card reveal">
           <h3 class="feature-card__title">Comprehensive Security</h3>
           <p class="feature-card__desc">Protect sensitive information with encryption, access control, and compliance standards.</p>
-          <div class="feature-card__art" aria-hidden="true"><span class="art-shield"></span></div>
+          <div class="feature-card__art" aria-hidden="true"><img src="assets/Cylindrical Half Star.png" alt="" class="feature-card__art-img" /></div>
         </div>
       </div>
     </div>
@@ -416,6 +408,6 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
