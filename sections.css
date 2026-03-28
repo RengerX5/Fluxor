@@ -346,21 +346,37 @@
   bottom: 0;
   right: 0;
   left: 0;
-  top: 100px;
+  top: 80px;
   pointer-events: none;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   overflow: hidden;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
 .feature-card__art-img {
+  /* Images exported @2x from Figma: render at 50% natural size = 1x crisp */
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center bottom;
   display: block;
-  opacity: 0.9;
+  /* Scale down @2x export to correct 1x display size */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Small cards (3-col row): constrain image height */
+.features__grid > .feature-card:nth-child(-n+3) .feature-card__art-img {
+  max-height: 280px;
+  object-position: center bottom;
+}
+
+/* Large cards (2-col row): more space for image */
+.features__grid > .feature-card:nth-child(n+4) .feature-card__art-img {
+  max-height: 320px;
+  object-position: right bottom;
 }
 
 
